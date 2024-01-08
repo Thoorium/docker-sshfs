@@ -7,6 +7,6 @@ COPY ./entrypoint.sh /entrypoint.sh
 
 VOLUME ["/mount", "/config"]
 
-ENV UID=0 GID=0 PORT=22 IDENTITY_FILE=/config/id_rsa SSHPASS=
+ENV UID=0 GID=0 PORT=22 IDENTITY_FILE=/config/id_ed25519 SSHPASS=
 
 ENTRYPOINT ["/entrypoint.sh"]
