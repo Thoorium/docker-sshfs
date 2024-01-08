@@ -16,6 +16,8 @@ then
   GID="${GID:-0}"
   PORT="${PORT:-22}"
 
+  echo "Mounting $@"
+
   CMD=(
     sshfs
     -f
@@ -35,6 +37,8 @@ then
   then
     CMD=(sshpass -e sshfs "${CMD[@]}")
   fi
+
+  echo "Executing ${CMD[@]}"
 
   exec "${CMD[@]}"
 fi
